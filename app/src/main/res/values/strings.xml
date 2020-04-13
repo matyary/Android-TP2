@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TP2</string>
+    <string name="hint_user">Ingrese usuario</string>
+    <string name="hint_pass">Ingrese contraseña</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
