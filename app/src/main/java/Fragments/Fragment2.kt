@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
 import com.utn.tp2.R
 
@@ -17,12 +18,12 @@ import com.utn.tp2.R
  */
 class Fragment2 : Fragment() {
 
-    lateinit var logueo: Login
-    lateinit var loqueo_aux: Array<String>
     lateinit var view_f2: View
     lateinit var user_f2: EditText
     lateinit var pass_f2: EditText
     lateinit var btn_f2_to_f3: Button
+
+    val args: Fragment2Args by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,8 +50,10 @@ class Fragment2 : Fragment() {
             val user = user_f2.getText() .toString()
             val pass = pass_f2.getText().toString()
 
-            Fragment2Args.fromBundle(arguments!!).copy(usuario2, clave2)
-            if (user == usuario2 && pass == clave2) {
+            val usuario2 = args.usuarios
+            val clave2 = args.claves
+
+            if ( user == usuario2 && pass == clave2) {
                 Fragment2Directions.actionFragment2ToFragment3()
                 view_f2.findNavController().navigate(R.id.action_fragment2_to_fragment3)
             }
@@ -60,6 +63,9 @@ class Fragment2 : Fragment() {
         }
     }
 }
+
+
+
 
 
 

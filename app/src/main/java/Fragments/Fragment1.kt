@@ -46,7 +46,7 @@ class Fragment1 : Fragment() {
             val user = user_f1.getText().toString()
             val pass = pass_f1.getText().toString()
 
-            if ( user != null && pass != null) {
+            if ( user != " " && pass != "  ") {
                 val action2 = Fragment1Directions.actionFragment1ToFragment2(user,pass)
                 view_f1.findNavController().navigate(action2)
             }
